@@ -1,0 +1,26 @@
+﻿@model Park
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+
+<div class="container">
+    <h2>Park Details</h2>
+    <img class="DetaiImage" src="~/images/park/@(Model.ParkName).jpg)" width="240" />
+    <h1><strong>@Model.ParkName</strong></h1>
+    <p>@Model.State</p>
+    <p>@Model.Acreage</p>
+    <p>@Model.ElevationInFeet</p>
+    <p>@Model.MilesOfTrail</p>
+    <p>@Model.NumberOfCampsites</p>
+    <p>@Model.Climate</p>
+    <p>@Model.YearFounded</p>
+    <p>@Model.AnnualVisitorCount</p>
+    <p>@Model.InspirationalQuote</p>
+    <p>@Model.InspirationalQuoteSource</p>
+    <p>@Model.ParkDescription</p>
+    <p>@Model.EntryFee</p>
+    <p>@Model.NumberOfAnimalSpecies</p>
+
+</div>

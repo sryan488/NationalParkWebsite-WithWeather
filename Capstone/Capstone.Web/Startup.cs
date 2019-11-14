@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Capstone.Web.DAL;
 
 namespace Capstone.Web
 {
@@ -32,6 +33,10 @@ namespace Capstone.Web
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            string connectionString = Configuration.GetConnectionString("Default");
+
+            services.AddScoped<IParkDAO, ParkSqlDAO>(d => new ParkSqlDAO(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
