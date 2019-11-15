@@ -26,11 +26,13 @@ namespace Capstone.Web.Controllers
             return View(parks);
         }
 
-        public IActionResult Detail(string code)
+        public IActionResult Detail(Park park)
         {
-            Park park = parkDAO.GetPark(code);
-            IList<Weather> weatherList = parkDAO.GetWeather(code);
+            string tempScale = park.TempScale;
+            park = parkDAO.GetPark(park.ParkCode);
+            IList<Weather> weatherList = parkDAO.GetWeather(park.ParkCode);
             park.WeatherList = weatherList;
+            park.TempScale = tempScale;
 
             Dictionary<string, string> weatherPrep = new Dictionary<string, string>()
             {

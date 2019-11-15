@@ -1,37 +1,45 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
-for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿#logo{
+    width: 20%;
+    min-width: 200px
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+td {
+    padding: 0px 0px 0px 0px
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+tr {
+    padding: 0px
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.homeImage{
+    width: 200px
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.parkNames{
+    vertical-align: text-top;
+    margin: 0px
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+.forecast {
+    text-transform: capitalize;
+}
+
+.weather1 {
+    width: 25%;
+    padding: 5%;
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-color: forestgreen
+}
+
+.weather {
+    width: 15%;
+    padding: 2%;
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-color: forestgreen
+}
+
+table {
+    position: center
 }
