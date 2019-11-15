@@ -18,7 +18,7 @@
 </head>
 <body>
     <header>
-        <img id="logo" src="~/images/logo.png" alt="Weather Geek logo"/>
+        <img id="logo" src="~/images/logo.png" alt="Weather Geek logo" />
     </header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -31,10 +31,10 @@
                 </button>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Capstone.Web</a>
             </div>*@
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Survey" asp-action="Index">Survey</a></li>
+            <div>
+                <ul id="navbarUL">
+                    <li id="navbarLI"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li id="navbarLI"><a asp-area="" asp-controller="Survey" asp-action="Index">Survey</a></li>
                 </ul>
             </div>
         </div>

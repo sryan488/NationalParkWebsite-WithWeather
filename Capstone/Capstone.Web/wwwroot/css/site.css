@@ -1,10 +1,42 @@
-﻿#logo{
-    width: 20%;
-    min-width: 200px
+﻿#navbarUL {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
-td {
-    padding: 0px 0px 0px 0px
+#navbarLI {
+    float: left;
+}
+
+    #navbarLI a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        #navbarLI a:hover {
+            background-color: #111;
+        }
+
+#logo {
+    width: 20%;
+    min-width: 200px;
+    
+}
+
+h2 {
+    color: #333333;
+background: #FFFFFF;
+text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+}
+
+.description {
+
+    vertical-align: top;
 }
 
 tr {
@@ -12,12 +44,16 @@ tr {
 }
 
 .homeImage{
-    width: 200px
+    width: 300px
 }
 
 .parkNames{
     vertical-align: text-top;
-    margin: 0px
+}
+
+.pd{
+    display: inline-flex;
+        width: 1000px;
 }
 
 .forecast {

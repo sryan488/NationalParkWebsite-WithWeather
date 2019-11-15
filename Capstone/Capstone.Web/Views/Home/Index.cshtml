@@ -3,9 +3,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>National Parks</h2>
+<h2 align="center">National Parks</h2>
 
-<div class="container">
+<div align="center" class="container">
     <table>
         <tbody>
             @foreach (Park park in Model)
@@ -14,9 +14,9 @@
                     <td>
                         <a asp-controller="Home" asp-action="Detail" asp-route-parkCode="@park.ParkCode"><img class="homeImage" src="~/images/parks/@(park.ParkCode).jpg" /> </a>
                     </td>
-                    <td>
+                    <td class="description">
                         <h3 class="parkNames">@park.ParkName</h3>
-                        <div>@park.ParkDescription</div>
+                        <div class="pd">@park.ParkDescription</div>
                     </td>
                 </tr>
             }
