@@ -10,7 +10,7 @@
         <tbody>
             @foreach (Park park in Model)
             {
-                <tr>
+                <tr id="mainRow">
                     <td>
                         <a asp-controller="Home" asp-action="Detail" asp-route-parkCode="@park.ParkCode"><img class="homeImage" src="~/images/parks/@(park.ParkCode).jpg" /> </a>
                     </td>

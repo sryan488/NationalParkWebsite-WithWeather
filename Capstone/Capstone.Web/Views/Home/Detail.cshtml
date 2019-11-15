@@ -7,21 +7,36 @@
 
 <div class="container">
     <h2>Park Details</h2>
-    <img class="DetaiImage" img src="~/images/parks/@(Model.ParkCode).jpg" width="240" />
-    <h1><strong>@Model.ParkName</strong></h1>
-    <p>@Model.State</p>
-    <p>@Model.Acreage</p>
-    <p>@Model.ElevationInFeet</p>
-    <p>@Model.MilesOfTrail</p>
-    <p>@Model.NumberOfCampsites</p>
-    <p>@Model.Climate</p>
-    <p>@Model.YearFounded</p>
-    <p>@Model.AnnualVisitorCount</p>
-    <p>@Model.InspirationalQuote</p>
-    <p>@Model.InspirationalQuoteSource</p>
+    <img class="detailImage" img src="~/images/parkImages/@(Model.ParkCode)2.jpg" />
+    <div id="detailHeadings">
+        <h1><strong>@Model.ParkName</strong></h1>
+        <p>@Model.State</p>
+    </div>
+    <table>
+        <tr>
+            <td class="nittygritty">
+                <span> Acreage: @Model.Acreage</span>
+            </td>
+            <td class="nittygritty">
+                <span>Elevation: @Model.ElevationInFeet</span>
+            </td>
+            <td class="nittygritty">
+                <span class="nittygritty">Miles of Trail: @Model.MilesOfTrail</span>
+            </td>
+            <td class="nittygritty">
+                <span class="nittygritty">Number of Campsites: @Model.NumberOfCampsites</span>
+            </td>
+
+        </tr>
+    </table>
+    <p>Climate: @Model.Climate</p>
+    <p id="yearFounded">Year Founded: @Model.YearFounded</p>
+    <p>Annual Visitors: @Model.AnnualVisitorCount</p>
+    <p id="inspiredQuote">@Model.InspirationalQuote</p>
+    <p id="quoteSource">~@Model.InspirationalQuoteSource</p>
     <p>@Model.ParkDescription</p>
-    <p>@Model.EntryFee</p>
-    <p>@Model.NumberOfAnimalSpecies</p>
+    <p>Entry Fee $@Model.EntryFee</p>
+    <p>Fun Fact! @Model.ParkName has @Model.NumberOfAnimalSpecies different animal species 🐾</p>
 </div>
 
 <div>

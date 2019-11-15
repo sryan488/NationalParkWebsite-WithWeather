@@ -10,22 +10,21 @@
     float: left;
 }
 
-    #navbarLI a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
+#navbarLI a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-        #navbarLI a:hover {
-            background-color: #111;
-        }
+#navbarLI a:hover {
+    background-color: #111;
+}
 
 #logo {
     width: 20%;
     min-width: 200px;
-    
 }
 
 h2 {
@@ -34,17 +33,29 @@ background: #FFFFFF;
 text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
 }
 
-.description {
+.container{
+    margin: 0px 10% 0px 10%
+}
 
+
+.description {
     vertical-align: top;
 }
 
-tr {
-    padding: 0px
+table {
+    border-collapse: collapse;
+}
+
+#mainRow {
+    padding: 0px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: green;
 }
 
 .homeImage{
-    width: 300px
+    width: 300px;
+    padding: 5px 0px 3px 3px
 }
 
 .parkNames{
@@ -52,8 +63,7 @@ tr {
 }
 
 .pd{
-    display: inline-flex;
-        width: 1000px;
+    padding: 0px 5px
 }
 
 .forecast {
@@ -63,19 +73,69 @@ tr {
 .weather1 {
     width: 25%;
     padding: 5%;
-    border-bottom-style: solid;
+    border-style: solid;
     border-width: 2px;
-    border-color: forestgreen
+    border-color: green;
+    background-color: aqua
 }
 
 .weather {
     width: 15%;
     padding: 2%;
-    border-bottom-style: solid;
+    border-style: solid;
     border-width: 2px;
-    border-color: forestgreen
+    border-color: green
 }
 
 table {
     position: center
+}
+
+
+.detailImage {
+    position: relative;
+    width: 100%
+}
+
+#detailHeadings {
+    position: absolute;
+    top: 250px;
+    left: 250px;
+    color: white;
+    font-size: x-large;
+    text-shadow: rgb(122, 122, 122) 2px 2px 0px;
+}
+
+#inspiredQuote {
+    position: absolute;
+    max-width: 800px;
+    top: 900px;
+    left: 900px;
+    color: white;
+    font-style: italic;
+    font-size: x-large;
+    text-shadow: rgb(122, 122, 122) 2px 2px 0px;
+}
+#quoteSource {
+    position: absolute;
+    top: 1000px;
+    left: 1000px;
+    color: white;
+    font-style: italic;
+    font-size: x-large;
+    text-shadow: rgb(122, 122, 122) 2px 2px 0px;
+}
+
+#yearFounded {
+    position: absolute;
+    top: 300px;
+    right: 250px;
+    color: white;
+    font-style: italic;
+    font-size: x-large;
+    text-shadow: rgb(122, 122, 122) 2px 2px 0px;
+}
+
+.nittygritty{
+    padding: 0px 40px
 }
