@@ -7,70 +7,86 @@
 
 <div class="container">
     <h2>Park Details</h2>
-    <img class="detailImage" img src="~/images/parkImages/@(Model.ParkCode)2.jpg" />
-    <div id="detailHeadings">
-        <h1><strong>@Model.ParkName</strong></h1>
-        <p>@Model.State</p>
+    <div class="imageContainer">
+        <img class="detailImage" img src="~/images/parkImages/@(Model.ParkCode)2.jpg" />
+        <div id="detailHeadings">
+            <h1><strong>@Model.ParkName</strong></h1>
+            <p>@Model.State</p>
+            <p>Year Founded: @Model.YearFounded</p>
+        </div>
+
+        <p id="inspiredQuote">@Model.InspirationalQuote ~@Model.InspirationalQuoteSource</p>
+
     </div>
-    <table>
-        <tr>
-            <td class="nittygritty">
-                <span> Acreage: @Model.Acreage</span>
-            </td>
-            <td class="nittygritty">
-                <span>Elevation: @Model.ElevationInFeet</span>
-            </td>
-            <td class="nittygritty">
-                <span class="nittygritty">Miles of Trail: @Model.MilesOfTrail</span>
-            </td>
-            <td class="nittygritty">
-                <span class="nittygritty">Number of Campsites: @Model.NumberOfCampsites</span>
-            </td>
 
-        </tr>
-    </table>
-    <p>Climate: @Model.Climate</p>
-    <p id="yearFounded">Year Founded: @Model.YearFounded</p>
-    <p>Annual Visitors: @Model.AnnualVisitorCount</p>
-    <p id="inspiredQuote">@Model.InspirationalQuote</p>
-    <p id="quoteSource">~@Model.InspirationalQuoteSource</p>
-    <p>@Model.ParkDescription</p>
-    <p>Entry Fee $@Model.EntryFee</p>
-    <p>Fun Fact! @Model.ParkName has @Model.NumberOfAnimalSpecies different animal species 🐾</p>
-</div>
+    <div class="bodyContainer">
+        <div>
+            <p>@Model.ParkDescription</p>
+        </div>
+        <table>
+            <h4 align="center">Fun Facts</h4>
+            <tr>
+                <td class="nittygritty">
+                    Acreage: @Model.Acreage
+                </td>
+                <td class="nittygritty">
+                    Elevation: @Model.ElevationInFeet
+                </td>
+                <td class="nittygritty">
+                    Miles of Trail: @Model.MilesOfTrail
+                </td>
+                <td class="nittygritty">
+                    Number of Campsites: @Model.NumberOfCampsites
+                </td>
+                <td class="nittygritty">
+                    Climate: @Model.Climate
+                </td>
+                <td class="nittygritty">
+                    Annual Visitors: @Model.AnnualVisitorCount
+                </td>
+                <td class="nittygritty">
+                    Entry Fee: $@Model.EntryFee
+                </td>
+                <td class="nittygritty">
+                    There are @Model.NumberOfAnimalSpecies different animal species 🐾
+                </td>
+            </tr>
+        </table>
+    </div>
 
-<div>
-    <form method="get" asp-action="Detail" asp-controller="Home" >
-        <label asp-for="TempScale"></label>
-        <p><input type="radio" name="TempScale" asp-for="TempScale" value="Fahrenheit"> Fahrenheit &#8457 <input type="radio" name="TempScale" asp-for="TempScale" value="Celcius"> Celcius &#8451 </p>
-        <input type="hidden" name="ParkCode" asp-for="ParkCode" >
-        <input type="submit" value="Submit" />
-    </form>
+    <h2 align="center">5 Day Weather Forecast</h2>
+    <div>
+        <form method="post" asp-action="Detail" asp-controller="Home">
+
+            <p><label asp-for="TempScale">Choose your temperature scale:</label> <input type="radio" name="TempScale" asp-for="TempScale" value="Fahrenheit"> Fahrenheit &#8457 <input type="radio" name="TempScale" asp-for="TempScale" value="Celcius"> Celcius &#8451 <input type="hidden" name="ParkCode" asp-for="ParkCode"> <input type="submit" value="🌡Submit🌡" /> </p>
+
+        </form>
         <h2>Today</h2>
         @if (Model.TempScale == "Celcius")
-        { int high1 = (Model.WeatherList[0].High - 32)*5 / 9;
+        {
+            int high1 = (Model.WeatherList[0].High - 32) * 5 / 9;
             int low1 = (Model.WeatherList[0].Low - 32) * 5 / 9;
             <table>
                 <tr>
                     <td class="weather1">
-                            @if (Model.WeatherList[0].Forecast == "partly cloudy")
-                            {
-                                <img class="DetaiImage" img src="~/images/weather/partlyCloudy.png" width="240" />
-                            }
-                            else
-                            {
-                                <img class="DetaiImage" img src="~/images/weather/@(Model.WeatherList[0].Forecast).png" width="240" />
-                            }
-                            <p class="forecast">@Model.WeatherList[0].Forecast</p>
-                            <p>High of @high1 &#8451</p>
-                            <p>Low of @low1 &#8451</p>
-                            <p>@Model.WeatherPrep[Model.WeatherList[0].Forecast]</p>
-                            @if ((Model.WeatherList[0].Low > 75) || (Model.WeatherList[0].High > 75))
-                            {<p>🌡 Bring an extra gallon of water 🌡</p>}
-                            @if ((Model.WeatherList[0].High - Model.WeatherList[0].Low) > 20)
-                            {<p>Wear breathable layers</p>}
-                            @if ((Model.WeatherList[0].Low < 20) || (Model.WeatherList[0].High < 20))
-                            {<p>⚠❄Frigid temperatures are deadly❄⚠</p>}
+                        @if (Model.WeatherList[0].Forecast == "partly cloudy")
+                        {
+                            <img class="DetaiImage" img src="~/images/weather/partlyCloudy.png" width="240" />
+                        }
+                        else
+                        {
+                            <img class="DetaiImage" img src="~/images/weather/@(Model.WeatherList[0].Forecast).png" width="240" />
+                        }
+                        <p class="forecast">@Model.WeatherList[0].Forecast</p>
+                        <p>High of @high1 &#8451</p>
+                        <p>Low of @low1 &#8451</p>
+                        <p>@Model.WeatherPrep[Model.WeatherList[0].Forecast]</p>
+                        @if ((Model.WeatherList[0].Low > 75) || (Model.WeatherList[0].High > 75))
+                        {<p>🌡 Bring an extra gallon of water 🌡</p>}
+                        @if ((Model.WeatherList[0].High - Model.WeatherList[0].Low) > 20)
+                        {<p>Wear breathable layers</p>}
+                        @if ((Model.WeatherList[0].Low < 20) || (Model.WeatherList[0].High < 20))
+                        {<p>⚠❄Frigid temperatures are deadly❄⚠</p>}
                     </td>
                     @for (int i = 1; i < Model.WeatherList.Count; i++)
                     {
@@ -104,7 +120,7 @@
         {
             <table>
                 <tr>
-                    <td>
+                    <td class="weather1">
                         @if (Model.WeatherList[0].Forecast == "partly cloudy")
                         {
                             <img class="DetaiImage" img src="~/images/weather/partlyCloudy.png" width="240" />
@@ -150,5 +166,7 @@
                 </tr>
             </table>
         }
+
+    </div>
 
 </div>

@@ -91,6 +91,11 @@ table {
     position: center
 }
 
+.imageContainer{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 
 .detailImage {
     position: relative;
@@ -99,8 +104,8 @@ table {
 
 #detailHeadings {
     position: absolute;
-    top: 250px;
-    left: 250px;
+    top: 50px;
+    left: 50px;
     color: white;
     font-size: x-large;
     text-shadow: rgb(122, 122, 122) 2px 2px 0px;
@@ -109,8 +114,8 @@ table {
 #inspiredQuote {
     position: absolute;
     max-width: 800px;
-    top: 900px;
-    left: 900px;
+    top: 500px;
+    left: 90px;
     color: white;
     font-style: italic;
     font-size: x-large;
@@ -118,8 +123,8 @@ table {
 }
 #quoteSource {
     position: absolute;
-    top: 1000px;
-    left: 1000px;
+    top: 600px;
+    left: 100px;
     color: white;
     font-style: italic;
     font-size: x-large;
@@ -128,8 +133,8 @@ table {
 
 #yearFounded {
     position: absolute;
-    top: 300px;
-    right: 250px;
+    top: 50px;
+    left: 1200px;
     color: white;
     font-style: italic;
     font-size: x-large;
@@ -137,5 +142,9 @@ table {
 }
 
 .nittygritty{
-    padding: 0px 40px
+    padding: 0px 20px;
+    text-align: center;
 }
+
+
+
