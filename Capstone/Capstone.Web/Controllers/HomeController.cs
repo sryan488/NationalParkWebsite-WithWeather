@@ -28,7 +28,12 @@ namespace Capstone.Web.Controllers
 
         public IActionResult Detail(Park park)
         {
-            string tempScale = park.TempScale;
+            string tempScale = HttpContext.Session.GetString("tempScale");
+            if (tempScale == null)
+            {
+                tempScale = "F";
+                HttpContext.Session.SetString("tempScale", tempScale);
+            }
             park = parkDAO.GetPark(park.ParkCode);
             IList<Weather> weatherList = parkDAO.GetWeather(park.ParkCode);
             park.WeatherList = weatherList;
@@ -48,6 +53,12 @@ namespace Capstone.Web.Controllers
             return View(park);
         }
 
+        [HttpPost]
+        public IActionResult Detail(String parkCode, string tempScale)
+        {
+            HttpContext.Session.SetString("tempScale", tempScale);
+            return RedirectToAction("Detail", new { parkCode = parkCode });
+        }
         public IActionResult ChooseTempScale(Park TempScale, string code)
         {
             return RedirectToAction("Detail", new { @code = code });
