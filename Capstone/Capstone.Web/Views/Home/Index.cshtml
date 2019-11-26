@@ -3,20 +3,24 @@
     ViewData["Title"] = "Index";
 }
 
-<h2 align="center">National Parks</h2>
+<h2 class="pageTitle">National Parks</h2>
 
 <div align="center" class="container">
     <table>
         <tbody>
             @foreach (Park park in Model)
             {
-                <tr id="mainRow">
+                <tr>
                     <td>
-                        <a asp-controller="Home" asp-action="Detail" asp-route-parkCode="@park.ParkCode"><img class="homeImage" src="~/images/parks/@(park.ParkCode).jpg" /> </a>
-                    </td>
-                    <td class="description">
-                        <h3 class="parkNames">@park.ParkName</h3>
-                        <div class="pd">@park.ParkDescription</div>
+                        <div class="rowContainer">
+                            <div class="imgContainer">
+                                <a asp-controller="Home" asp-action="Detail" asp-route-parkCode="@park.ParkCode"><img class="homeImage" src="~/images/ParkSigns/@(park.ParkCode)3.jpg" /> </a>
+                            </div>
+                            <div class="descriptionContainer">
+                                <h3 class="parkNames">@park.ParkName</h3>
+                                <p class="pd">@park.ParkDescription</p>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             }

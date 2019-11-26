@@ -1,4 +1,8 @@
-﻿#navbarUL {
+﻿body{
+    margin: 0
+}
+
+#navbarUL {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -27,16 +31,17 @@
     min-width: 200px;
 }
 
+.pageTitle{
+    text-align: center
+}
+
 h2 {
-    color: #333333;
-background: #FFFFFF;
-text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+    font-size: 40px
 }
 
 .container{
-    margin: 0px 10% 0px 10%
+    margin: 0px 10%
 }
-
 
 .description {
     vertical-align: top;
@@ -53,9 +58,30 @@ table {
     border-color: green;
 }
 
+.rowContainer{
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    grid-template-areas: "img description";
+    border-style: solid;
+    border-width: 2px;
+    border-color: darkgreen;
+    border-radius: 10px;
+    margin: 10px 0px
+}
+
+.imgContainer{
+    grid-area: img;
+    width: 300px
+}
+
+.descriptionContainer{
+    grid-area: description
+}
+
 .homeImage{
     width: 300px;
-    padding: 5px 0px 3px 3px
+    padding: 4px 4px 0px 4px;
+    border-radius: 10px
 }
 
 .parkNames{
@@ -70,72 +96,106 @@ table {
     text-transform: capitalize;
 }
 
-.weather1 {
-    width: 25%;
-    padding: 5%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: green;
-    background-color: aqua
-}
-
-.weather {
-    width: 15%;
-    padding: 2%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: green
-}
-
 table {
     position: center
 }
 
-
-.detailImage {
-    position: relative;
-    width: 100%
+#imgContainer{
+    position:relative
+}
+#detailImage {
+    width: 100%;
+    min-width: 800px
 }
 
-#detailHeadings {
+#detailContainer{
     position: absolute;
-    top: 250px;
-    left: 250px;
+    left: 10px;
+    top: 5px
+}
+
+#quoteContainer {
+    position: absolute;
+    left: 10px;
+    bottom: 5px
+}
+
+#parkName {
     color: white;
-    font-size: x-large;
-    text-shadow: rgb(122, 122, 122) 2px 2px 0px;
+    font-size: xx-large;
+    text-shadow: 0px 2px 3px #000000;
+    margin: 0px
 }
 
+#state {
+    color: white;
+    font-size: large;
+    text-shadow: 0px 2px 3px #000000;
+    margin: 0px
+}
 #inspiredQuote {
-    position: absolute;
-    max-width: 800px;
-    top: 900px;
-    left: 900px;
     color: white;
     font-style: italic;
-    font-size: x-large;
-    text-shadow: rgb(122, 122, 122) 2px 2px 0px;
+    font-size: large;
+    text-shadow: 0px 2px 3px #000000;
+    margin-top: 200px
 }
 #quoteSource {
-    position: absolute;
-    top: 1000px;
-    left: 1000px;
     color: white;
     font-style: italic;
-    font-size: x-large;
-    text-shadow: rgb(122, 122, 122) 2px 2px 0px;
+    font-size: large;
+    text-shadow: 0px 2px 3px #000000;
 }
 
 #yearFounded {
-    position: absolute;
-    top: 300px;
-    right: 250px;
     color: white;
-    font-style: italic;
-    font-size: x-large;
-    text-shadow: rgb(122, 122, 122) 2px 2px 0px;
+    font-size: large;
+    text-shadow: 0px 2px 3px #000000;
+    display: inline-block;
+    margin-left: 100px
+}
+
+#acreage{
+    padding-right: 20px
 }
 
 .nittygritty{
-    padding: 0px 40px
+    padding: 0px 20px
+}
+
+.weatherContainer{
+}
+
+.weather1 {
+    width: 25%;
+    min-height: 400px;
+    padding: 5px;
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: darkgreen;
+    border-radius: 5px;
+    background-color: aqua;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top
+}
+
+.weather {
+    width: 15%;
+    min-width: 100px;
+    min-height: 400px;
+    margin: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: darkgreen;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top
+}
+
+.weatherImage {
+    width: 100%;
+    border-radius: 5px;
 }

@@ -3,22 +3,22 @@
     ViewData["Title"] = "FavoriteParks";
 }
 
-<h2>Favorite Parks</h2>
+<h2 class="pageTitle">Favorite Parks</h2>
 
 <div class="container">
     <table class="table table-striped">
         <tbody>
             @foreach (Survey survey in Model)
             {
-            <tr>
-                <td>
-                    <img src="~/images/parks/@(survey.ParkCode).jpg" width="90" />
-                </td>
-                <td>
-                    <h3><strong><span style="color:black">Park: @survey.ParkName</span></strong></h3>
-                    <p><strong>Number of surveys: @survey.Count</strong></p>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <img src="~/images/parks/@(survey.ParkCode).jpg" width="90" />
+                    </td>
+                    <td>
+                        <h3><strong><span style="color:black">Park: @survey.ParkName</span></strong></h3>
+                        <p><strong>Votes: @survey.Count</strong></p>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
